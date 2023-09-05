@@ -1,0 +1,37 @@
+
+ýõtype AccountDeployedEntity @entity {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+  factory: String!
+  paymaster: String!
+}
+
+type UserOperationEventEntity @entity {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+  paymaster: String!
+  nonce: BigInt!
+  success: Boolean
+  actualGasCost: BigInt!
+  actualGasUsed: BigInt!
+}
+
+type UserOperationRevertReasonEntity @entity {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+  paymaster: String!
+  nonce: BigInt!
+  revertReason: String!
+}
+
+type SessionCreatedEntity @entity {
+  id: ID!
+  sessionUser: String!
+  startFrom: BigInt!
+  validUntil: BigInt!
+  totalAmount: BigInt!
+}
+õ

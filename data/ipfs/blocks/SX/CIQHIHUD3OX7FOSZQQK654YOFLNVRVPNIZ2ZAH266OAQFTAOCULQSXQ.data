@@ -1,0 +1,7 @@
+
+WQtype AccountEntity @entity {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+}
+Q

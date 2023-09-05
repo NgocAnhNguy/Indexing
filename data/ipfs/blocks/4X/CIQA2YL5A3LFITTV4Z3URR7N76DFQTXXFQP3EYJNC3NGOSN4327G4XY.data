@@ -1,0 +1,39 @@
+
+	•	dataSources:
+  - kind: ethereum/contract
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmSACH28YKetNJRyKqfH6nvSq9Fu5JXwTpQdzTVfwoapkb
+          name: EntryPoint
+        - file:
+            /: /ipfs/QmWfbz2F6RRosEnuBEZ7dFBuumUw8Cz5ZUZNAjdxaRpfHH
+          name: SimpleAccount
+      apiVersion: 0.0.6
+      entities:
+        - Deposited
+        - UserOperationEvent
+      eventHandlers:
+        - event: 'Deposited(indexed address,uint256)'
+          handler: handleDeposited
+        - event: >-
+            UserOperationEvent(indexed bytes32,indexed address,indexed
+            address,uint256,bool,uint256,uint256)
+          handler: handleUserOperationEvent
+      file:
+        /: /ipfs/QmafJPk71WymgFa3y66SF7LXGBiSwy54sRbxGxxa4FJ3kC
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: EntryPoint
+    network: mainnet
+    source:
+      abi: EntryPoint
+      address: '0x7E4F0bfB77eba984Fb3F81910F555F429671225c'
+      startBlock: 131890245
+description: Gravatar for Ethereum
+repository: 'https://github.com/graphprotocol/example-subgraph'
+schema:
+  file:
+    /: /ipfs/QmdYzJGcaFSbZMKHrxiyzJvqFZK4kVWB1uEjAuT3idcKLP
+specVersion: 0.0.4
+•	

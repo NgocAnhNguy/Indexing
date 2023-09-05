@@ -1,0 +1,27 @@
+
+ ˜type AccountEntity @entity {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+}
+
+type SessionEntity @entity {
+  id: ID!
+  sender: String!
+  sessionUser: String!
+  startFrom: BigInt!
+  validUntil: BigInt!
+  totalAmount: BigInt!
+  deleted: Boolean!
+}
+
+type TransactionEntity @entity {
+  id: ID!
+  userOpHash: String!
+  sender: String!
+  target: String!
+  value: String!
+  data: String!
+  rejected: Boolean!
+}
+˜

@@ -1,0 +1,62 @@
+
+œ”dataSources:
+  - kind: ethereum/contract
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmSACH28YKetNJRyKqfH6nvSq9Fu5JXwTpQdzTVfwoapkb
+          name: EntryPoint
+      apiVersion: 0.0.6
+      entities:
+        - AccountEntity
+        - TransactionEntity
+      eventHandlers:
+        - event: 'AccountDeployed(indexed bytes32,indexed address,address,address)'
+          handler: handleAccountDeployed
+        - event: >-
+            UserOperationEvent(indexed bytes32,indexed address,indexed
+            address,uint256,bool,uint256,uint256)
+          handler: handleUserOperationEvent
+      file:
+        /: /ipfs/QmSJUwP8SXsuPn43vBSFSvhqSzEEhh94xfrvAe9YiNHv7N
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: EntryPoint
+    network: mainnet
+    source:
+      abi: EntryPoint
+      address: '0x7E4F0bfB77eba984Fb3F81910F555F429671225c'
+      startBlock: 131890245
+description: Gravatar for Ethereum
+repository: 'https://github.com/graphprotocol/example-subgraph'
+schema:
+  file:
+    /: /ipfs/QmeUrdVZiokivxeKN749hLZt9ndFntxoVctdXzJABC4JY2
+specVersion: 0.0.4
+templates:
+  - kind: ethereum/contract
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmWfbz2F6RRosEnuBEZ7dFBuumUw8Cz5ZUZNAjdxaRpfHH
+          name: SimpleAccount
+      apiVersion: 0.0.6
+      entities:
+        - TransactionEntity
+        - SessionEntity
+      eventHandlers:
+        - event: 'Invoked(indexed address,uint256,bytes)'
+          handler: handleInvoked
+        - event: 'SessionCreated(indexed address,uint256,uint256,uint256)'
+          handler: handleSessionCreated
+        - event: 'SessionRemoved(indexed address,uint256,uint256,uint256,uint256)'
+          handler: handleSessionRemoved
+      file:
+        /: /ipfs/QmPX8JqB1o5FfA9MtR1ygJJUJhHK5LJPehVWYU3sDMM3Dk
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: SimpleAccount
+    network: mainnet
+    source:
+      abi: SimpleAccount
+”
