@@ -8,10 +8,11 @@ import {
   TransactionEntity,
   SessionEntity,
 } from "../../generated/schema";
+import { SimpleAccount as SimpleAccountTemplate } from "../../generated/templates";
 import { log } from "@graphprotocol/graph-ts";
 
 export function handleAccountDeployed(event: AccountDeployed): void {
-  log.info("Event handleAccountDeployed: sender={}", [
+  log.info("Event AccountDeployed: sender={}", [
     event.params.sender.toHexString(),
   ]);
 
@@ -21,7 +22,7 @@ export function handleAccountDeployed(event: AccountDeployed): void {
   entity.sender = event.params.sender.toHexString();
   entity.save();
 
-  log.info("Event handleAccountDeployed: entity={}", [entity.userOpHash]);
+  SimpleAccountTemplate.create(event.params.sender);
 }
 
 export function handleUserOperationEvent(event: UserOperationEvent): void {
@@ -34,6 +35,9 @@ export function handleUserOperationEvent(event: UserOperationEvent): void {
   let entity = new TransactionEntity(id);
   entity.userOpHash = event.params.userOpHash.toHexString();
   entity.sender = event.params.sender.toHexString();
+  entity.target = "";
+  entity.value = "";
+  entity.data = "";
   entity.rejected = false;
   entity.save();
 }

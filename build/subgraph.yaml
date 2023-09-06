@@ -10,7 +10,7 @@ dataSources:
     source:
       address: "0x7E4F0bfB77eba984Fb3F81910F555F429671225c"
       abi: EntryPoint
-      startBlock: 132391901
+      startBlock: 131890245
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -25,6 +25,9 @@ dataSources:
       eventHandlers:
         - event: AccountDeployed(indexed bytes32,indexed address,address,address)
           handler: handleAccountDeployed
+        - event: UserOperationEvent(indexed bytes32,indexed address,indexed
+            address,uint256,bool,uint256,uint256)
+          handler: handleUserOperationEvent
       file: EntryPoint/EntryPoint.wasm
   - kind: ethereum/contract
     name: SimpleAccountFactory
@@ -32,7 +35,7 @@ dataSources:
     source:
       address: "0x8CDd3fee93Ad5FE5D9d6DBFdeB96f9B169b810e0"
       abi: SimpleAccountFactory
-      startBlock: 132391901
+      startBlock: 131890245
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -59,11 +62,18 @@ templates:
       file: templates/SimpleAccount/SimpleAccount.wasm
       entities:
         - TransactionEntity
+        - SessionEntity
       abis:
-        - name: SimpleAccountFactory
-          file: SimpleAccount/abis/SimpleAccountFactory.json
         - name: SimpleAccount
           file: SimpleAccount/abis/SimpleAccount.json
+        - name: SimpleAccountFactory
+          file: SimpleAccount/abis/SimpleAccountFactory.json
+        - name: EntryPoint
+          file: SimpleAccount/abis/EntryPoint.json
       eventHandlers:
         - event: Invoked(indexed address,uint256,bytes)
           handler: handleInvoked
+        - event: SessionCreated(indexed address,uint256,uint256,uint256)
+          handler: handleSessionCreated
+        - event: SessionRemoved(indexed address,uint256,uint256,uint256,uint256)
+          handler: handleSessionRemoved
