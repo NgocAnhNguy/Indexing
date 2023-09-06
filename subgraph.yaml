@@ -10,45 +10,62 @@ dataSources:
     source:
       address: "0x7E4F0bfB77eba984Fb3F81910F555F429671225c"
       abi: EntryPoint
-      startBlock: 132328180
+      startBlock: 132391901
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - AccountEntity
-        # - TransactionEntity
-        # - UserOperationEventEntity
+        - TransactionEntity
+        - UserOperationEventEntity
       abis:
         - name: EntryPoint
           file: ./abis/EntryPoint.json
       eventHandlers:
         - event: AccountDeployed(indexed bytes32,indexed address,address,address)
           handler: handleAccountDeployed
-      #   - event: UserOperationEvent(indexed bytes32,indexed address,indexed address,uint256,bool,uint256,uint256)
-      #     handler: handleUserOperationEvent
+        # - event: UserOperationEvent(indexed bytes32,indexed address,indexed address,uint256,bool,uint256,uint256)
+        #   handler: handleUserOperationEvent
       file: ./src/handlers/EntryPoint.mapping.ts
-# templates:
-#   - name: SimpleAccount
-#     kind: ethereum/contract
-#     network: mainnet
-#     source:
-#       abi: SimpleAccount
-#     mapping:
-#       kind: ethereum/events
-#       apiVersion: 0.0.6
-#       language: wasm/assemblyscript
-#       file: ./src/handlers/SimpleAccount.mapping.ts
-#       entities:
-#         - TransactionEntity
-#         - SessionEntity
-#       abis:
-#         - name: SimpleAccount
-#           file: ./abis/SimpleAccount.json
-#       eventHandlers:
-#         - event: Invoked(indexed address,uint256,bytes)
-#           handler: handleInvoked
-#         - event: SessionCreated(indexed address,uint256,uint256,uint256)
-#           handler: handleSessionCreated
-#         - event: SessionRemoved(indexed address,uint256,uint256,uint256,uint256)
-#           handler: handleSessionRemoved
+  - kind: ethereum/contract
+    name: SimpleAccountFactory
+    network: mainnet
+    source:
+      address: "0x8CDd3fee93Ad5FE5D9d6DBFdeB96f9B169b810e0"
+      abi: SimpleAccountFactory
+      startBlock: 132391901
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - AccountEntity
+      abis:
+        - name: SimpleAccountFactory
+          file: ./abis/SimpleAccountFactory.json
+      eventHandlers:
+        - event: AccountCreated(indexed address,indexed address)
+          handler: handleAccountCreated
+      file: ./src/handlers/SimpleAccountFactory.mapping.ts
+templates:
+  - kind: ethereum/contract
+    name: SimpleAccount
+    network: mainnet
+    source:
+      abi: SimpleAccount
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/handlers/SimpleAccount.mapping.ts
+      entities:
+        - TransactionEntity
+      abis:
+        - name: SimpleAccountFactory
+          file: ./abis/SimpleAccountFactory.json
+        - name: SimpleAccount
+          file: ./abis/SimpleAccount.json
+      eventHandlers:
+        - event: Invoked(indexed address,uint256,bytes)
+          handler: handleInvoked

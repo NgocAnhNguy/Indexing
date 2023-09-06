@@ -11,9 +11,9 @@
     "chalk" "^2.4.2"
 
 "@babel/helper-validator-identifier@^7.22.5":
-  "integrity" "sha512-4E/F9IIEi8WR94324mbDUMo074YTheJmd7eZF5vITTeYchqAi6sYXRLHUVsmkdmY4QjfKTcB2jB7dVP3NaBElQ=="
-  "resolved" "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.15.tgz"
-  "version" "7.22.15"
+  "integrity" "sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ=="
+  "resolved" "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.5.tgz"
+  "version" "7.22.5"
 
 "@babel/highlight@^7.22.13":
   "integrity" "sha512-C/BaXcnnvBCmHTpz/VGZ8jgtE2aYlW4hxDhseJAWZb7gqGM/qtCK6iZUb0TyKFf7BOUsBH7Q7fkRsDRhg1XklQ=="
@@ -391,14 +391,13 @@
     "wrap-ansi" "^7.0.0"
 
 "@oclif/plugin-autocomplete@^2.3.6":
-  "integrity" "sha512-pFgMwBgzCGsG8Rk+/x2dmfjA4T4Z8BziWhkr4sYUcQTPvxWZ6YXd2+1Kp4+PDb6ttn0w5M801F97kYhbNLD6VQ=="
-  "resolved" "https://registry.npmjs.org/@oclif/plugin-autocomplete/-/plugin-autocomplete-2.3.7.tgz"
-  "version" "2.3.7"
+  "integrity" "sha512-cmRPss9OQxz8sRoaw5C/4t/Da7eBEIDJWKRsuzUSQBcPJCN3kTgjp24VTjPHT3j86197s/qkjCRct+3P0IGArg=="
+  "resolved" "https://registry.npmjs.org/@oclif/plugin-autocomplete/-/plugin-autocomplete-2.3.8.tgz"
+  "version" "2.3.8"
   dependencies:
     "@oclif/core" "^2.15.0"
     "chalk" "^4.1.0"
     "debug" "^4.3.4"
-    "fs-extra" "^9.0.1"
 
 "@oclif/plugin-not-found@^2.4.0":
   "integrity" "sha512-LqW7qpw5Q8ploRiup2jEIMQJXcxHP1tpwj45GApKQMe7GRdGdRdjBT9Tu+U2tdEgMqgMplAIhOsYCx2nc2nMSw=="
@@ -553,9 +552,9 @@
     "@types/node" "*"
 
 "@types/cli-progress@^3.11.0":
-  "integrity" "sha512-d9iA+0uys9N6wV/SvZkDEWMYwv+e/mhWPLa6lncQ1ZqrC3mXHnDmidanVGoVGnmCQ3mCxyu9S09Y2s18u5wL5w=="
-  "resolved" "https://registry.npmjs.org/@types/cli-progress/-/cli-progress-3.11.1.tgz"
-  "version" "3.11.1"
+  "integrity" "sha512-XhXhBv1R/q2ahF3BM7qT5HLzJNlIL0wbcGyZVjqOTqAybAnsLisd7gy1UCyIqpL+5Iv6XhlSyzjLCnI2sIdbCg=="
+  "resolved" "https://registry.npmjs.org/@types/cli-progress/-/cli-progress-3.11.0.tgz"
+  "version" "3.11.0"
   dependencies:
     "@types/node" "*"
 
@@ -567,9 +566,9 @@
     "@types/node" "*"
 
 "@types/connect@^3.4.33":
-  "integrity" "sha512-P63Zd/JUGq+PdrM1lv0Wv5SBYeA2+CORvbrXbngriYY0jzLUWfQMQQxOhjONEz/wlHOAxOdY7CY65rgQdTjq2w=="
-  "resolved" "https://registry.npmjs.org/@types/connect/-/connect-3.4.36.tgz"
-  "version" "3.4.36"
+  "integrity" "sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ=="
+  "resolved" "https://registry.npmjs.org/@types/connect/-/connect-3.4.35.tgz"
+  "version" "3.4.35"
   dependencies:
     "@types/node" "*"
 
@@ -2712,16 +2711,6 @@
     "graceful-fs" "^4.1.2"
     "jsonfile" "^4.0.0"
     "universalify" "^0.1.0"
-
-"fs-extra@^9.0.1":
-  "integrity" "sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ=="
-  "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-9.1.0.tgz"
-  "version" "9.1.0"
-  dependencies:
-    "at-least-node" "^1.0.0"
-    "graceful-fs" "^4.2.0"
-    "jsonfile" "^6.0.1"
-    "universalify" "^2.0.0"
 
 "fs-extra@^9.1.0":
   "integrity" "sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ=="
@@ -5779,6 +5768,11 @@
   "integrity" "sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA=="
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
+
+"typescript@>=2.7":
+  "integrity" "sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz"
+  "version" "5.2.2"
 
 "uint8arrays@^3.0.0":
   "integrity" "sha512-+QJa8QRnbdXVpHYjLoTpJIdCTiw9Ir62nocClWuXIq2JIh4Uta0cQsTSpFL678p2CN8B+XSApwcU+pQEqVpKWg=="

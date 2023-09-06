@@ -1,7 +1,0 @@
-
-\Vtype DepositedEntity @entity {
-  id: ID!
-  account: String!
-  totalDeposit: BigInt!
-}
-V

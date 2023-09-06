@@ -1,24 +1,20 @@
-// import {
-//   Invoked,
-//   SessionCreated,
-// } from "../../generated/templates/SimpleAccount/SimpleAccount";
-// import { SessionEntity, TransactionEntity } from "../../generated/schema";
-// import { log } from "@graphprotocol/graph-ts";
+import {
+  Invoked,
+  SessionCreated,
+} from "../../generated/templates/SimpleAccount/SimpleAccount";
+import { SessionEntity, TransactionEntity } from "../../generated/schema";
+import { log } from "@graphprotocol/graph-ts";
 
-// export function handleInvoked(event: Invoked): void {
-//   log.info("Event handleInvoked: target={}", [
-//     event.params.target.toHexString(),
-//   ]);
+export function handleInvoked(event: Invoked): void {
+  log.info("Event Invoked: target={}", [event.params.target.toHexString()]);
 
-//   const id = event.transaction.hash.toHex();
-//   var entity = TransactionEntity.load(id);
-//   if (entity != null) {
-//     entity.target = event.params.target.toHexString();
-//     entity.value = event.params.value.toHexString();
-//     entity.data = event.params.data.toHexString();
-//     entity.save();
-//   }
-// }
+  const id = event.transaction.hash.toHex();
+  var entity = new TransactionEntity(id);
+  entity.target = event.params.target.toHexString();
+  entity.value = event.params.value.toHexString();
+  entity.data = event.params.data.toHexString();
+  entity.save();
+}
 
 // export function handleSessionCreated(event: SessionCreated): void {
 //   log.info("Event handleSessionCreated: sessionUser={}", [

@@ -1,0 +1,31 @@
+
+Š‚dataSources:
+  - kind: ethereum/contract
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmRw9Ky8FSvarXay3vVkxX3PJ6RATW18zv9ESPtogK871v
+          name: SimpleAccountFactory
+      apiVersion: 0.0.6
+      entities:
+        - AccountEntity
+      eventHandlers:
+        - event: 'AccountCreated(indexed address,indexed address)'
+          handler: handleAccountDeployed
+      file:
+        /: /ipfs/QmRYKtWWiN57rL9a8yc2MtKH5n5DD8tj6moZcyHVcJY5gR
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: SimpleAccountFactory
+    network: mainnet
+    source:
+      abi: SimpleAccountFactory
+      address: '0xE16413392a55B940a9c2E82d340CF2A072DD0eAA'
+      startBlock: 131890245
+description: Gravatar for Ethereum
+repository: 'https://github.com/graphprotocol/example-subgraph'
+schema:
+  file:
+    /: /ipfs/QmW9vzPA3dPaEGBNre9KZwCgC9wL6aC27h5G6eRSYMpAXP
+specVersion: 0.0.4
+‚
